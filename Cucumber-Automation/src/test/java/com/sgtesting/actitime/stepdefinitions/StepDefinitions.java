@@ -65,12 +65,12 @@ public class StepDefinitions {
 	 * Purpose:
 	 * Description:
 	 */
-	@When("^I enter the usename in username text field$")
-	public void I_enter_the_usename_in_username_text_field()
+	@When("^I enter the (.*) in username text field$")
+	public void I_enter_the_usename_in_username_text_field(String username)
 	{
 		try
 		{
-			oBrowser.findElement(By.id("username")).sendKeys("admin");
+			oBrowser.findElement(By.id("username")).sendKeys(username);
 			Thread.sleep(1000);
 		}catch(Exception e)
 		{
@@ -87,12 +87,12 @@ public class StepDefinitions {
 	 * Purpose:
 	 * Description:
 	 */
-	@And("^I enter the password in password text field$")
-	public void I_enter_the_password_in_password_text_field()
+	@And("^I enter the (.*) in password text field$")
+	public void I_enter_the_password_in_password_text_field(String password)
 	{
 		try
 		{
-			oBrowser.findElement(By.name("pwd")).sendKeys("manager");
+			oBrowser.findElement(By.name("pwd")).sendKeys(password);
 			Thread.sleep(1000);
 		}catch(Exception e)
 		{
@@ -256,4 +256,6 @@ public class StepDefinitions {
 			e.printStackTrace();
 		}
 	}
+	
+	
 }
